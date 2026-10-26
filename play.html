@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>dithr</title>
+<base href="vendor/">
+<link rel="stylesheet" href="dithr.css">
+<script src="/sandbox/_ready.js"></script>
+</head>
+<body>
+<canvas id="stage" aria-label="Dithered plate. Drag a piece. Pinch to resize and turn."></canvas>
+<button id="toggle" type="button" aria-label="Tools" aria-expanded="false" aria-controls="panel"><i></i><i></i><i></i><i></i></button>
+<div id="panel">
+  <p id="help">Drag a piece. Pinch to resize and turn.</p>
+  <p class="k">Method</p>
+  <div class="row" id="methods"></div>
+  <p class="k">Ink</p>
+  <div class="row" id="inks"></div>
+  <label class="slide">Dot <input id="dot" type="range" min="2" max="9" value="3"></label>
+  <label class="slide">Gain <input id="gain" type="range" min="10" max="100" value="72"></label>
+  <p class="k">Add</p>
+  <div class="row" id="adds"></div>
+  <p class="k">Plate</p>
+  <div class="row" id="plates"></div>
+  <p class="k">Words</p>
+  <div class="row" id="words"></div>
+  <p class="k">Layers</p>
+  <div class="row" id="layers"></div>
+  <div class="row">
+    <button type="button" id="front">Front</button>
+    <button type="button" id="drop">Remove</button>
+  </div>
+  <label class="filebtn">Photo<input id="file" type="file" accept="image/*"></label>
+  <button type="button" id="save">Save ink</button>
+  <p id="credit">idea after @redphx (redphx/dithr); clean-room implementation, no code copied</p>
+</div>
+<p id="hint">idea after @redphx (redphx/dithr); clean-room implementation, no code copied</p>
+<script src="dithr.js"></script>
+<!-- LICENSE.txt -->
+</body>
+</html>
