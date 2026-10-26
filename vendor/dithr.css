@@ -1,0 +1,156 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #e7c9a4;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+body { position: relative; }
+#stage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  background: #e7c9a4;
+}
+#toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 22px;
+  background: rgba(27, 24, 20, 0.62);
+  box-shadow: 0 0 0 1px rgba(243, 238, 228, 0.55);
+  display: grid;
+  grid-template-columns: 6px 6px;
+  gap: 4px;
+  place-content: center;
+  touch-action: manipulation;
+}
+#toggle i {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(243, 238, 228, 0.95);
+  pointer-events: none;
+}
+#toggle i:nth-child(1) { opacity: 0.4; }
+#toggle i:nth-child(2) { opacity: 1; }
+#toggle i:nth-child(3) { opacity: 0.75; }
+#toggle i:nth-child(4) { opacity: 0.28; }
+#toggle.hot i { background: #e07060; }
+#toggle:focus { outline: none; }
+#toggle:focus-visible { outline: 2px solid rgba(243, 238, 228, 0.85); outline-offset: 2px; }
+#panel {
+  display: none;
+  position: absolute;
+  top: 58px;
+  right: 8px;
+  z-index: 4;
+  width: min(200px, 48vw);
+  max-height: min(40vh, 360px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  padding: 10px 10px 12px;
+  border-radius: 14px;
+  background: rgba(243, 238, 228, 0.96);
+  color: #241c16;
+  box-shadow: 0 10px 28px rgba(28, 18, 10, 0.28);
+  font: 13px/1.35 system-ui, sans-serif;
+  touch-action: pan-y;
+}
+#panel.open { display: block; }
+#help, #credit {
+  margin: 0;
+  font: 11px/1.35 "Noto Serif", "Noto Serif CJK SC", Georgia, serif;
+  color: rgba(36, 28, 22, 0.72);
+}
+#credit { margin-top: 8px; }
+.k {
+  margin: 10px 0 4px;
+  font: 600 10px/1 system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(36, 28, 22, 0.5);
+}
+.row { display: flex; flex-wrap: wrap; gap: 6px; }
+.row button, .filebtn, #save {
+  font: 600 13px/1.2 system-ui, sans-serif;
+  color: #241c16;
+  background: rgba(255, 252, 246, 0.8);
+  border: 0;
+  border-radius: 8px;
+  min-height: 44px;
+  padding: 6px 8px;
+  touch-action: manipulation;
+}
+.row button { flex: 1 1 42%; min-width: 72px; }
+#layers button {
+  flex: 1 1 100%;
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.row button.on, .filebtn.on, #save.on {
+  background: #241c16;
+  color: #f3eee4;
+}
+.slide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 4px;
+  font: 600 13px/1 system-ui, sans-serif;
+}
+.slide input { flex: 1; min-height: 44px; margin: 0; }
+.filebtn, #save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 6px;
+  box-sizing: border-box;
+  position: relative;
+}
+.filebtn input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
+}
+#hint {
+  position: absolute;
+  left: 12px;
+  right: 56px;
+  bottom: 8px;
+  z-index: 3;
+  margin: 0;
+  text-align: left;
+  font: 9px/1.35 system-ui, sans-serif;
+  color: rgba(243, 238, 228, 0.84);
+  text-shadow: 0 1px 2px rgba(20, 16, 12, 0.55);
+  pointer-events: none;
+}
+#hint.ink {
+  color: rgba(27, 24, 20, 0.72);
+  text-shadow: 0 1px 1px rgba(243, 238, 228, 0.4);
+}
+#panel button:focus { outline: none; }
+#panel button:focus-visible { outline: 2px solid #c4472f; outline-offset: 1px; }
