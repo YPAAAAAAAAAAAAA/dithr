@@ -1,0 +1,20 @@
+{
+  "id": "dithr",
+  "title": {
+    "en": "dithr",
+    "zh": "墨点"
+  },
+  "intro": {
+    "en": "A pocket dither press for e-paper and color screens. Drag layers, type, and shapes; halftone, Bayer, Floyd–Steinberg, and Atkinson settle on the device. No account.",
+    "zh": "口袋里的抖动印刷台，面向电子纸和彩屏。拖动图层、文字和形状，半色调、拜尔、弗洛伊德和阿特金森都在设备上落成网点，无需账号。"
+  },
+  "officialFiles": [
+    "vendor/index.html",
+    "vendor/dithr.css",
+    "vendor/dithr.js",
+    "vendor/LICENSE.txt"
+  ],
+  "playHtml": "play.html",
+  "aspect": "phone",
+  "githubRepo": "ypaaaaaaaaaaaaa/dithr"
+}
