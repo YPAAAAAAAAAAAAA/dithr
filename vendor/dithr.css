@@ -1,3 +1,4 @@
+/* Quay poster. Cream sky, dotted water, boat, piling. Dots stay on this phone. */
 html, body {
   height: 100%;
   margin: 0;
@@ -44,10 +45,10 @@ body { position: relative; }
   background: rgba(243, 238, 228, 0.95);
   pointer-events: none;
 }
-#toggle i:nth-child(1) { opacity: 0.4; }
-#toggle i:nth-child(2) { opacity: 1; }
-#toggle i:nth-child(3) { opacity: 0.75; }
-#toggle i:nth-child(4) { opacity: 0.28; }
+#toggle i.d1 { opacity: 0.4; }
+#toggle i.d2 { opacity: 1; }
+#toggle i.d3 { opacity: 0.75; }
+#toggle i.d4 { opacity: 0.28; }
 #toggle.hot i { background: #e07060; }
 #toggle:focus { outline: none; }
 #toggle:focus-visible { outline: 2px solid rgba(243, 238, 228, 0.85); outline-offset: 2px; }
