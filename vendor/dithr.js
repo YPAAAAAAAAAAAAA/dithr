@@ -1,8 +1,39 @@
 /* dithr — pocket dither press.
-   Layers, type, and shapes settle into e-paper and color-screen dots.
-   2D only: the first plate is drawn on the CPU, then ready() is signaled.
+   A paper poster of a quay. Cream sky, a pale sun, two blue ridges,
+   a dark shore, dotted water, a black boat with a cream sail, and a
+   brown piling. The title reads QUAY and 港湾. Halftone dots, Bayer
+   tiles, Floyd–Steinberg, and Atkinson all settle on this phone.
+   Drag a piece. Pinch to resize and turn. Layers, type, and shapes
+   stay on the device. Nothing is sent away. No account.
    idea after @redphx (redphx/dithr); clean-room implementation, no code copied.
-   House licence: LICENSE.txt */
+   House licence: LICENSE.txt
+
+   The opening plate is the quay. Sky is warm paper. The sun is a ring
+   of amber dots. A thin rule sits under the title. The far ridge is
+   blue. The near shore is ink. The water is a field of blue dots that
+   grow denser toward the bottom. The boat sits low, hull in ink, sail
+   in paper, a small red stripe on the sail. The piling is a brown
+   post left of the boat. Type uses a serif stack already on the phone.
+
+   Halftone draws round dots whose size follows the ink. Bayer uses an
+   ordered tile. Floyd spreads the leftover ink to the right and down.
+   Atkinson spreads a lighter leftover across a wider neighborhood.
+   Inks are Mono, Gray, Red, Four, Press, and Spectra. Press is the
+   opening ink: paper, mist, amber, red, teal, green, brown, and ink.
+
+   Pieces you can add: a hill, a boat, a sun, a bar, a ring, a word.
+   Words already on the plate are QUAY, INK, PAPER, PORT, 港湾, and 纸鸢.
+   A photo picked on this phone is drawn into the same dots and is not
+   uploaded. Save ink writes a picture of the plate into the phone's
+   own files. The corner toggle is the only control on screen. The
+   panel starts closed. The first painted plate is the quay, and only
+   then does the page say the frame is up.
+
+   2D canvas only. The plate is drawn on the CPU into one image, then
+   copied to the stage. No graphics-processor context, no readback of
+   a graphics buffer, no account, no remote font, no remote script.
+   Touch drags a piece. A two-finger pinch resizes and turns it.
+   The credit line stays small at the foot of the plate. */
 (function () {
   "use strict";
 
